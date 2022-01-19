@@ -2,14 +2,14 @@
 
 use App\Classes\ConnectorClass;
 use App\Classes\CreateTableClass;
-use App\Classes\CustomClassBD;
+use App\Classes\CreateInformationClass;
 
 require_once('Autoload.php');
 
 $bd1 = new CreateTableClass(new ConnectorClass);
 $bd1->createTable('taxi_worker');
 
-$bd = new CustomClassBD(new ConnectorClass);
+$bd = new CreateInformationClass(new ConnectorClass);
 echo $bd->getConfigbyKey('bd');
 echo '<br>';
 $bd->configUser('taxi_worker', 'Alex', 'my password', 'Alex@gmail.com');

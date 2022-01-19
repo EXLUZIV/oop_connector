@@ -7,7 +7,7 @@ use App\Classes\ConnectorClass;
 require_once('Autoload.php');
 require_once('app/config.php');
 
-class CustomClassBD extends ConnectorClass
+class CreateInformationClass extends ConnectorClass
 {
 
 	private string $user = '';
@@ -16,7 +16,7 @@ class CustomClassBD extends ConnectorClass
 	private string $table = '';
 	private $link;
 
-	public function __construct(object $inj)
+	public function __construct(ConnectorClass $inj)
 	{
 		$this->link = $inj->conectBD();
 	}

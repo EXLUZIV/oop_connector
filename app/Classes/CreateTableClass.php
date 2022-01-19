@@ -13,7 +13,7 @@ class CreateTableClass extends ConnectorClass
 	private string $nameTable;
 	private $link;
 
-	public function __construct(object $inj)
+	public function __construct(ConnectorClass $inj)
 	{
 		$this->link = $inj->conectBD();
 	}
