@@ -5,7 +5,6 @@ namespace App\Classes;
 use App\Interface\ConnectorInterface;
 
 require_once('Autoload.php');
-require_once('app/config.php');
 
 class ConnectorClass implements ConnectorInterface
 {
@@ -16,7 +15,6 @@ class ConnectorClass implements ConnectorInterface
 
 	public function __construct(ConfigBDClass $bdconfig)
 	{
-		
 		$this->server = $bdconfig->getConfig('server');
 		$this->pass = $bdconfig->getConfig('pass');
 		$this->user = $bdconfig->getConfig('user');

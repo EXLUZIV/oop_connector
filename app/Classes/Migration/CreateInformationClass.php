@@ -5,7 +5,6 @@ namespace App\Classes;
 use App\Classes\ConnectorClass;
 
 require_once('Autoload.php');
-require_once('app/config.php');
 
 class CreateInformationClass extends ConnectorClass
 {

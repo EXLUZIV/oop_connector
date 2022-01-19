@@ -7,16 +7,16 @@ use App\Classes\CreateInformationClass;
 
 require_once('Autoload.php');
 
-$bd1 = new CreateTableClass(new ConnectorClass(new ConfigBDClass));
-$bd1->createTable('taxi_worker');
+$bd1 = new CreateTableClass(new ConnectorClass(new ConfigBDClass('config.php')));
+$bd1->createTable('uber');
 
-$bd = new CreateInformationClass(new ConnectorClass(new ConfigBDClass));
+$bd = new CreateInformationClass(new ConnectorClass(new ConfigBDClass('config.php')));
 echo '<br>';
-$bd->configUser('taxi_worker', 'Alex', 'my password', 'Alex@gmail.com');
+$bd->configUser('uber', 'Alex', 'my password', 'Alex@gmail.com');
 $bd->addUser();
-$bd->configUser('taxi_worker', 'Vadim', '5556666', 'Vadim@gmail.com');
+$bd->configUser('uber', 'Vadim', '5556666', 'Vadim@gmail.com');
 $bd->addUser();
-$bd->configUser('taxi_worker', 'Dima', '123321', 'Dima@gmail.com');
+$bd->configUser('uber', 'Dima', '123321', 'Dima@gmail.com');
 $bd->addUser();
 echo $bd->getUserByEmail('Dima@gmail.com');
 echo '<br>';
