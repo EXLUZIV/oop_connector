@@ -15,9 +15,11 @@ class CreateInformationClass extends ConnectorClass
 	private string $table = '';
 	private $link;
 
-	public function __construct(ConnectorClass $inj)
+	public function __construct(ConfigBDClass $bdconfig)
 	{
-		$this->link = $inj->conectBD();
+		parent::__construct($bdconfig);
+
+		$this->link = parent::conectBD();
 	}
 
 	public function configUser(string $table, string $user, string $password, string $email): void

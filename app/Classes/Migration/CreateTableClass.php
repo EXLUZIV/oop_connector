@@ -9,12 +9,14 @@ require_once('Autoload.php');
 class CreateTableClass extends ConnectorClass
 {
 
-	private string $nameTable;
+	
 	private $link;
 
-	public function __construct(ConnectorClass $inj)
+	public function __construct(ConfigBDClass $bdconfig)
 	{
-		$this->link = $inj->conectBD();
+		parent::__construct($bdconfig);
+
+		$this->link = parent::conectBD();
 	}
 
 	public function createTable(string $nameTable): void

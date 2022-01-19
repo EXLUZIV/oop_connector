@@ -7,11 +7,14 @@ use App\Classes\CreateInformationClass;
 
 require_once('Autoload.php');
 
-$inj = new ConnectorClass('config.php');
+$inj = new ConfigBDClass('config.php');
+
 $bd1 = new CreateTableClass($inj);
 $bd1->createTable('uber');
 
 $bd = new CreateInformationClass($inj);
+
+
 echo '<br>';
 $bd->configUser('uber', 'Alex', 'my password', 'Alex@gmail.com');
 $bd->addUser();
