@@ -14,21 +14,14 @@ class ConnectorClass implements ConnectorInterface
 	private string $user;
 	private string $bd;
 
-	public function __construct()
+	public function __construct(ConfigBDClass $bdconfig)
 	{
-		$config = include('App/config.php');
-		$this->server = $config['server'];
-		$this->pass = $config['pass'];
-		$this->user = $config['user'];
-		$this->bd = $config['bd'];
-	}
-
-	public function getConfigbyKey(string $key): string
-	{
-		$config = include('App/config.php');
-		return $config[$key];
-	}
-	
+		
+		$this->server = $bdconfig->getConfig('server');
+		$this->pass = $bdconfig->getConfig('pass');
+		$this->user = $bdconfig->getConfig('user');
+		$this->bd = $bdconfig->getConfig('bd');
+	}	
 
 	public function conectBD()
 	{
