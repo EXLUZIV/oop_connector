@@ -4,12 +4,8 @@ namespace App\Classes;
 
 use App\Classes\ConnectorClass;
 
-require_once('Autoload.php');
-
-class CreateTableClass extends ConnectorClass
+class CreateComentTableClass extends ConnectorClass
 {
-
-	
 	private $link;
 
 	public function __construct(ConfigBDClass $bdconfig)
@@ -21,6 +17,9 @@ class CreateTableClass extends ConnectorClass
 
 	public function createTable(string $nameTable): void
 	{
-		$createTable = mysqli_query($this->link, "CREATE TABLE $nameTable ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, pass VARCHAR(32), email VARCHAR(255) NOT NULL );");
+		$sql = "CREATE TABLE $nameTable ( id INT AUTO_INCREMENT PRIMARY KEY, coment VARCHAR(255) NOT NULL);";
+		$createTable = mysqli_query($this->link, $sql);
+		echo 'Create coment table';
+		echo '<br>';
 	}
 }

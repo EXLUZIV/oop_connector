@@ -2,8 +2,6 @@
 
 namespace App\Classes;
 
-require_once('Autoload.php');
-
 class ConfigBDClass
 {
 

@@ -4,15 +4,13 @@ namespace App\Classes;
 
 use App\Classes\ConnectorClass;
 
-require_once('Autoload.php');
-
 class CreateInformationClass extends ConnectorClass
 {
 
-	private string $user = '';
-	private string $password = '';
-	private string $email = '';
-	private string $table = '';
+	private string $user;
+	private string $password;
+	private string $email;
+	private string $table;
 	private $link;
 
 	public function __construct(ConfigBDClass $bdconfig)
@@ -37,14 +35,16 @@ class CreateInformationClass extends ConnectorClass
 			die();
 		}
 
-		$add = mysqli_query($this->link, "INSERT INTO `$this->table` (`id`, `name`, `pass`, `email`) VALUES (NULL, '$this->user', '$this->password', '$this->email');");
+		$sql = "INSERT INTO `$this->table` (`id`, `name`, `pass`, `email`) VALUES (NULL, '$this->user', '$this->password', '$this->email');";
+		$add = mysqli_query($this->link, $sql);
 		echo 'User add in table';
 		echo '<br>';
 	}
 
 	public function getUserByEmail(string $email)
 	{
-		$result = mysqli_query($this->link, "SELECT * FROM `worker` WHERE `email` LIKE '$email'");
+		$sql = "SELECT * FROM `worker` WHERE `email` LIKE '$email'";
+		$result = mysqli_query($this->link, $sql);
 		$row = mysqli_fetch_array($result);
 
 		return var_dump($row);

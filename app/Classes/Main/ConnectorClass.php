@@ -4,8 +4,6 @@ namespace App\Classes;
 
 use App\Interface\ConnectorInterface;
 
-require_once('Autoload.php');
-
 class ConnectorClass implements ConnectorInterface
 {
 	private string $server;
@@ -31,6 +29,7 @@ class ConnectorClass implements ConnectorInterface
 			echo 'Database connected';
 			echo '<br>';
 		}
+
 		return $link;
 	}
 }
