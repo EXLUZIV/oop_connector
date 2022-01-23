@@ -17,7 +17,7 @@ class CreateUserTableClass extends ConnectorClass
 
 	public function createTable(string $nameTable): void
 	{
-		$sql = "CREATE TABLE $nameTable ( id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, pass VARCHAR(32), email VARCHAR(255) NOT NULL );";
+		$sql = "CREATE TABLE $nameTable ( user_id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255) NOT NULL, pass VARCHAR(32), email VARCHAR(255) NOT NULL );";
 		$createTable = mysqli_query($this->link, $sql);
 		echo 'Create user table';
 		echo '<br>';

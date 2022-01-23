@@ -7,8 +7,9 @@ use mysqli;
 class CreatePostClass extends ConnectorClass
 {
 
-	private string $post;
+	private string $text;
 	private string $table;
+	private string $userId;
 	private $link;
 
 	public function __construct(ConfigBDClass $bdconfig)
@@ -18,20 +19,21 @@ class CreatePostClass extends ConnectorClass
 		$this->link = parent::conectBD();
 	}
 
-	public function configPost(string $table, string $post): void
+	public function configPost(string $table, string $userId, string $text): void
 	{
 		$this->table = $table;
-		$this->post = $post;
+		$this->userId = $userId;
+		$this->text = $text;
 	}
 
 	public function addPost(): void
 	{
-		if($this->post === '' || $this->table === ''){
+		if($this->text === '' || $this->table === '' || $this->userId === ''){
 			echo 'Data not entered';
 			die();
 		}
 
-		$sql = "INSERT INTO `$this->table` (`id`, `post`) VALUES (NULL, '$this->post');";
+		$sql = "INSERT INTO `$this->table` (`post_id`, `user_id` , `post_text`) VALUES (NULL, '$this->userId' , '$this->text');";
 		$add = mysqli_query($this->link, $sql);
 		echo 'Post add in table';
 		echo '<br>';

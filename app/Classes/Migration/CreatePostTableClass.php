@@ -17,7 +17,7 @@ class CreatePostTableClass extends ConnectorClass
 
 	public function createTable(string $nameTable): void
 	{
-		$sql = "CREATE TABLE $nameTable ( id INT AUTO_INCREMENT PRIMARY KEY, post TEXT NOT NULL );";
+		$sql = "CREATE TABLE $nameTable ( post_id INT AUTO_INCREMENT PRIMARY KEY, user_id INT NOT NULL , post_text TEXT NOT NULL );";
 		$createTable = mysqli_query($this->link, $sql);
 		echo 'Create post table';
 		echo '<br>';

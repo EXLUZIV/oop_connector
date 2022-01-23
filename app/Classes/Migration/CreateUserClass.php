@@ -4,7 +4,7 @@ namespace App\Classes;
 
 use App\Classes\ConnectorClass;
 
-class CreateInformationClass extends ConnectorClass
+class CreateUserClass extends ConnectorClass
 {
 
 	private string $user;
@@ -35,7 +35,7 @@ class CreateInformationClass extends ConnectorClass
 			die();
 		}
 
-		$sql = "INSERT INTO `$this->table` (`id`, `name`, `pass`, `email`) VALUES (NULL, '$this->user', '$this->password', '$this->email');";
+		$sql = "INSERT INTO `$this->table` (`user_id`, `name`, `pass`, `email`) VALUES (NULL, '$this->user', '$this->password', '$this->email');";
 		$add = mysqli_query($this->link, $sql);
 		echo 'User add in table';
 		echo '<br>';
