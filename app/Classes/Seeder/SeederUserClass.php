@@ -1,10 +1,8 @@
 <?php
 
 namespace App\Classes;
+class SeederUserClass
 
-use App\Interface\SeederInterface;
-
-class SeederUserClass implements SeederInterface
 {
 	public static function up(): void
 	{

@@ -1,6 +1,5 @@
 <?php
 
-use App\Classes\AutoloadClass;
 use App\Classes\ConfigBDClass;
 use App\Classes\CreateComentTableClass;
 use App\Classes\CreatePostTableClass;

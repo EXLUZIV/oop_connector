@@ -2,9 +2,7 @@
 
 namespace App\Classes;
 
-use App\Interface\SeederInterface;
-
-class SeederComentClass implements SeederInterface
+class SeederComentClass
 {
 	public static function up(): void
 	{
