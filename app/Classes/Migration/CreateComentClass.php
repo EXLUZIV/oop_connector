@@ -33,7 +33,20 @@ class CreateComentClass extends ConnectorClass
 			echo 'Data not entered';
 			die();
 		}
-		$sql = "INSERT INTO `$this->table` (`coment_id` , `post_id` , `user_id` , `coment_text`) VALUES (NULL, '$this->postId' , '$this->userId' , '$this->text');";
+		$sql = "INSERT INTO 
+		`$this->table` (
+			`coment_id`, 
+			`post_id`, 
+			`user_id`, 
+			`coment_text`
+			) 
+			VALUES (
+				NULL, 
+				'$this->postId', 
+				'$this->userId', 
+				'$this->text'
+				);";
+		
 		$add = mysqli_query($this->link, $sql);
 		echo 'Coment add in table';
 		echo '<br>';

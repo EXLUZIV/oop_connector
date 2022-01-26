@@ -17,7 +17,14 @@ class CreateComentTableClass extends ConnectorClass
 
 	public function createTable(string $nameTable): void
 	{
-		$sql = "CREATE TABLE $nameTable ( coment_id INT AUTO_INCREMENT PRIMARY KEY, post_id INT NOT NULL , user_id INT NOT NULL , coment_text VARCHAR(255) NOT NULL);";
+
+		$sql = "CREATE TABLE $nameTable (
+			 coment_id INT AUTO_INCREMENT PRIMARY KEY, 
+			 post_id INT NOT NULL , 
+			 user_id INT NOT NULL , 
+			 coment_text VARCHAR(255) NOT NULL
+			 );";
+		
 		$createTable = mysqli_query($this->link, $sql);
 		echo 'Create coment table';
 		echo '<br>';

@@ -6,11 +6,11 @@ use App\Classes\CreateComentTableClass;
 use App\Classes\CreatePostTableClass;
 use App\Classes\CreateUserTableClass;
 
-$inj = new ConfigBDClass('config.php');
+$connectBD = new ConfigBDClass('config.php');
 
-$tb = new CreateUserTableClass($inj);
+$tb = new CreateUserTableClass($connectBD);
 $tb->createTable('worker');
-$tb1 = new CreatePostTableClass($inj);
+$tb1 = new CreatePostTableClass($connectBD);
 $tb1->createTable('post_by_worker');
-$tb2 = new CreateComentTableClass($inj);
+$tb2 = new CreateComentTableClass($connectBD);
 $tb2->createTable('coment_by_worker');
