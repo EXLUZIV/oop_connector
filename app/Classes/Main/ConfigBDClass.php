@@ -12,6 +12,11 @@ class ConfigBDClass
 		$this->filename = $filename;
 	}
 
+	public function setFile(string $filename): void
+	{
+		$this->filename = $filename;
+	}
+
 	public function getConfig(string $key): string
 	{
 		$config = include("App/Config/$this->filename");
