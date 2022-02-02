@@ -25,9 +25,6 @@ class ConnectorClass implements ConnectorInterface
 		if (mysqli_connect_errno()) {
 			echo 'Error' . mysqli_connect_errno() . '-' . mysqli_connect_error();
 			die();
-		} else{
-			echo 'Database connected';
-			echo '<br>';
 		}
 
 		return $link;

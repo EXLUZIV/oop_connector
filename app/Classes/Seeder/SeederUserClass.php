@@ -11,5 +11,9 @@ class SeederUserClass
 		$user = new CreateUserClass($connectBD);
 		$user->configUser('worker', 'Alex', 'secret pass', 'alex@gmail.com');
 		$user->addUser();
+		$user->configUser('worker', 'Dima', 'secret pass', 'dima@gmail.com');
+		$user->addUser();
+		$user->configUser('worker', 'Vova', 'secret pass', 'vova@gmail.com');
+		$user->addUser();
 	}
 }

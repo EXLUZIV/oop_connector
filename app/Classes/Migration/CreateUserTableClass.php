@@ -11,14 +11,9 @@ class CreateUserTableClass extends ConnectorClass
 
 	public function __construct(ConfigBDClass $bdconfig)
 	{
-		// parent::__construct($bdconfig);
+		parent::__construct($bdconfig);
 
 		$this->link = parent::conectBD();
-	}
-
-	public function bdconfig()
-	{
-		return $this->link;
 	}
 
 	public function createTable(string $nameTable): void
