@@ -12,32 +12,30 @@ class GetClass extends ConnectorClass
 
 		$this->link = parent::conectBD();
 	}
-	public function getHttp($id)
+	public function getById($id)
 	{
-		if (isset($id)) {
-
-			$sql = "SELECT * FROM `post_by_worker` WHERE `post_id` = '$id'";
+		$sql = "SELECT * FROM `post_by_worker` WHERE `post_id` = '$id'";
 			
-			$post = mysqli_query($this->link, $sql);
+		$post = mysqli_query($this->link, $sql);
 
-			$post = mysqli_fetch_assoc($post);
+		$post = mysqli_fetch_assoc($post);
 
-			echo json_encode($post);
+		echo json_encode($post);
 
-			return;
+		return;
+	}
 
-		} else {
+	public function getAll()
+	{
+		$postList = [];
+		$sql = "SELECT * FROM `post_by_worker`";
+		$posts = mysqli_query($this->link, $sql);
 
-			$postList = [];
-			$sql = "SELECT * FROM `post_by_worker`";
-			$posts = mysqli_query($this->link, $sql);
-
-			while($post = mysqli_fetch_assoc($posts)) {
-				$postList[] = $post;
-			}
-			echo json_encode($postList);
-
-			return;
+		while($post = mysqli_fetch_assoc($posts)) {
+			$postList[] = $post;
 		}
+		echo json_encode($postList);
+
+		return;
 	}
 }

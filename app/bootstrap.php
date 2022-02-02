@@ -1,7 +1,7 @@
 <?php
 
 use App\Classes\AutoloadClass;
-use App\Classes\PostClass;
+use App\Classes\FetchClass;
 use App\Classes\SeederClass;
 
 require('app/Classes/Main/AutoloadClass.php');
@@ -13,5 +13,5 @@ require('app/migration.php');
 
 // SeederClass::up();
 
-$post = new PostClass($connectBD);
-$post->getPost();
+$post = new FetchClass();
+$post->fetchPost();
