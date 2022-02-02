@@ -10,15 +10,16 @@ async function getPosts() {
 		document.querySelector('.all-box').innerHTML += `
 		<div class="box">
 			<p>Post title - ${post.post_title}</p>
-			<p>User - ${post.user_id}</p>
+			<p id="user">User - ${post.user_id} </p>
 			<p>Content - ${post.post_text}</p>
 			<a href="#" onclick="removePost(${post.post_id})">Delete</a>
 			<a href="#" onclick="changePost('${post.post_id}', '${post.user_id}', '${post.post_title}', '${post.post_text}')">Change post</a>
 		</div>
 		`
 	});
-}
 
+	getUser();
+}
 
 async function addPost() {
 	const postTitle = document.getElementById('postTitle').value;

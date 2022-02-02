@@ -22,15 +22,26 @@ class FetchClass
 		if ($method === 'GET') {
 
 			$get = new GetClass($connectBD);
-			if (isset($params[4])) {
-				$get->getById($id);
-
+			
+			if ($params[3] === 'users') {
+				$get->getByUsers();	
+				
 				return;
-			} else {
-				$get->getAll();
-
-				return;
-			}	
+			}
+			
+			if ($params[3] === 'posts') {
+				if (isset($params[4])) {
+					$get->getById($id);
+	
+					return;
+				} else {
+					$get->getAll();
+	
+					return;
+				}	
+			}
+			
+			return;
 		}
 
 		if ($method === 'POST') {
