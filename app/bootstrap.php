@@ -10,7 +10,6 @@ AutoloadClass::autoload();
 
 require('app/migration.php');
 
-
 // SeederClass::up();
 
 $post = new FetchClass();
