@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Classes;
-class FetchClass
+class RouteClass
 {
 	public function fetchPost()
 	{

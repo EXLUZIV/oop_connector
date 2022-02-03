@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Classes;
+namespace App\Seeder;
+
+use App\Classes\CreatePostClass;
 
 class SeederPostClass
 {

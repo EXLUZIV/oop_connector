@@ -1,6 +1,9 @@
 <?php
 
-namespace App\Classes;
+namespace App\Seeder;
+
+use App\Classes\CreateUserClass;
+
 class SeederUserClass
 
 {

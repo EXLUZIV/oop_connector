@@ -72,8 +72,8 @@ class AutoloadClass
 
 		spl_autoload_register(function ($class) {
 		
-			$prefix = 'App\\Classes\\';
-			$base_dir = 'app/Classes/Seeder/';
+			$prefix = 'App\\Seeder\\';
+			$base_dir = 'app/Seeder/';
 		
 			$len = strlen($prefix);
 			if (strncmp($prefix, $class, $len) !== 0) {
