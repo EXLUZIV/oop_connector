@@ -58,6 +58,8 @@ class FetchClass
 
 				return;
 			}
+
+			return;
 		}
 
 		if ($method === 'PATCH') {
@@ -74,6 +76,8 @@ class FetchClass
 
 				return;
 			}
+
+			return;
 		}
 
 		if ($method === 'DELETE') {
