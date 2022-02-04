@@ -3,4 +3,4 @@
 use App\Classes\RouteClass;
 
 $post = new RouteClass();
-$post->addRoute();
+$post->addRoute('GET', 'GetClass.php');
