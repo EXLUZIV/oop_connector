@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Classes;
+
 class RouteClass
 {
-	public function fetchPost()
+	public function addRoute()
 	{
 
 		global $connectBD;

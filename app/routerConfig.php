@@ -3,4 +3,4 @@
 use App\Classes\RouteClass;
 
 $post = new RouteClass();
-$post->fetchPost();
+$post->addRoute();
